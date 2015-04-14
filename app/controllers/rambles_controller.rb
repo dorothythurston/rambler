@@ -5,7 +5,7 @@ class RamblesController < ApplicationController
   end
 
   def create
-    ramble = Ramble.create(ramble_params)
+    ramble = current_user.rambles.create(ramble_params)
     redirect_to ramble
   end
 
