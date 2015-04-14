@@ -5,8 +5,7 @@ feature "User creates ramble" do
     user = create(:user)
     visit root_path(as: user)
 
-    fill_in "Body", with: "Just Rambling"
-    click_on "Ramble!"
+    create_ramble("Just Rambling")
 
     expect(page).to have_css "p", text: "Just Rambling"
   end

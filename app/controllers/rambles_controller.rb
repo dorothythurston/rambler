@@ -1,6 +1,7 @@
 class RamblesController < ApplicationController
   def index
     @ramble = Ramble.new
+    @rambles = Ramble.all
   end
 
   def create

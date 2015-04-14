@@ -5,8 +5,7 @@ feature "User deletes ramble" do
     user = create(:user)
     visit root_path(as: user)
     
-    fill_in "Body", with: "I say I say"
-    click_on "Ramble!"
+    create_ramble("I say I say")
     click_on "Delete"
 
     expect(page).to have_content("Ramble deleted")

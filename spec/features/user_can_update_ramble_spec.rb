@@ -5,11 +5,10 @@ feature "User updates ramble" do
     user = create(:user)
     visit root_path(as: user)
     
-    fill_in "Body", with: "I say I say"
-    click_on "Ramble!"
+    create_ramble("I say I say")
     click_on "Update"
     fill_in "Body", with: "No way No way"
-    click_on "Ramble This!"
+    click_on "Ramble!"
 
     expect(page).to have_content("No way No way")
   end
