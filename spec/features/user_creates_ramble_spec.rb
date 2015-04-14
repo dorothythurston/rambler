@@ -2,7 +2,8 @@ require "rails_helper"
 
 feature "User creates todo" do
   scenario "successfully" do
-    visit root_path
+    user = create(:user)
+    visit root_path(as: user)
 
     click_on "Ramble Something"
     fill_in "Body", with: "Just Rambling"
