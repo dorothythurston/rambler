@@ -19,6 +19,12 @@ class RamblesController < ApplicationController
     redirect_to root_path, notice: "Ramble deleted"
   end
 
+  def update
+    ramble = Ramble.find(params[:id])
+    ramble.update(ramble_params)
+    redirect_to ramble
+  end
+
   private
 
   def ramble_params

@@ -2,3 +2,9 @@
 <p><%= @ramble.body %></p>
 
 <%= link_to "Delete", @ramble, method: :delete %>
+<button id="Update">Update</button>
+<%= form_for @ramble do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.submit "Ramble This!" %>
+<% end %>
