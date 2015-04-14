@@ -12,6 +12,13 @@ class RamblesController < ApplicationController
     @ramble = Ramble.find(params[:id])
   end
 
+  def destroy
+    ramble = Ramble.find(params[:id])
+    ramble.destroy
+
+    redirect_to root_path, notice: "Ramble deleted"
+  end
+
   private
 
   def ramble_params
