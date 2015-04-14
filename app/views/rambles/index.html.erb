@@ -1,8 +1,12 @@
 <h1>Welcome</h1>
 
-<button id="add-ramble">Ramble Something</button>
-<%= form_for(@ramble) do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Ramble!" %>
+<% if current_user %>
+  <p>I'm thinking...</p>
+  <%= form_for(@ramble)  do |f| %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.submit "Ramble!" %>
+  <% end %>
+<% else %>
+  <p>Sign in to ramble</p>
 <% end %>
