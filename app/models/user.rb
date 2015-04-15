@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
 
   has_many :followers, through: :follower_relationships
 
+  has_many :likes, dependent: :destroy
+  has_many :liked_rambles, through: :likes, source: :likable, source_type: 'Ramble'
+
   def follow(user)
     follow = followed_user_relationships.create(followed_user: user)
   end
@@ -26,5 +29,17 @@ class User < ActiveRecord::Base
 
   def unfollow(user)
     followed_users.destroy user
+  end
+
+  def like(target)
+    like = likes.create(likable: target)
+  end
+
+  def liked?(target)
+    likes.exists?(likable: target)
+  end
+
+  def unlike(target)
+    likes.find_by(likable: target).destroy
   end
 end

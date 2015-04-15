@@ -1,10 +1,23 @@
 <h2>Just sayin...</h2>
 <p><%= @ramble.body %></p>
 
-<%= link_to "Delete", @ramble, method: :delete %>
-<button id="Update">Update</button>
-<%= form_for @ramble do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Ramble!" %>
+<% if current_user && current_user == @ramble.user %>
+  <%= link_to "Delete", @ramble, method: :delete %>
+
+  <button id="update-ramble">Update</button>
+  <%= form_for @ramble do |f| %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.submit "Ramble!" %>
+  <% end %>
+
+<% else %>
+  <% if current_user.liked? @ramble%>
+    <%= button_to "Unlike", unlike_ramble_path(@ramble), method: :delete %>
+  <%else%>
+    <%= button_to "Like", like_ramble_path(@ramble) %>
+  <%end%>
 <% end %>
+
+
+<%= pluralize(@ramble.likes.count, "likes") %>
