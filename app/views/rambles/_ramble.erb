@@ -1,4 +1,5 @@
 <li class="ramble">
  <%= ramble.body %>
  <%= ramble.created_at.strftime("%b %d %Y:") %>
+ -<%= link_to ramble.user.email, ramble.user %>
 </li>
