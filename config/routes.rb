@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "rambles#index"
 
-  resources :rambles, only: [:index, :create, :show, :destroy, :update] do
+  resources :rambles, only: [:index, :create, :show, :destroy] do
     member do
       post "like" => "ramble_likes#create"
       delete "unlike" => "ramble_likes#destroy"

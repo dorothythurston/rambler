@@ -2,14 +2,7 @@
 <p><%= @ramble.body %></p>
 
 <% if current_user && current_user == @ramble.user %>
-  <%= link_to "Delete", @ramble, method: :delete %>
-
-  <button id="update-ramble">Update</button>
-  <%= form_for @ramble do |f| %>
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-    <%= f.submit "Ramble!" %>
-  <% end %>
+  <%= button_to "Delete", @ramble, method: :delete %>
 
 <% else %>
   <% if current_user.liked? @ramble%>
