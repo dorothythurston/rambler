@@ -1,0 +1,10 @@
+require 'rails_helper'
+
+describe "shared/_header.html.erb" do
+  it "includes link to rambles index" do
+    render
+
+    expect(rendered).to have_link('Rambler', href: rambles_path)
+  end
+end
+
