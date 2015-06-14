@@ -3,7 +3,6 @@
 <% if current_user %>
   <p>I'm thinking...</p>
   <%= form_for(@ramble)  do |f| %>
-    <%= f.label :body %>
     <%= f.text_field :body %>
     <%= f.submit "Ramble!" %>
   <% end %>

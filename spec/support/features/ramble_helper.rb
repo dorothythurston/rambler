@@ -1,6 +1,6 @@
 module Features
   def create_ramble(ramble_content)
-    fill_in "Body", with: ramble_content
+    fill_in "ramble_body", with: ramble_content
     click_on "Ramble!"
   end
 
