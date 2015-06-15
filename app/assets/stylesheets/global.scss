@@ -19,9 +19,27 @@
     color: white;
     font-size: 3em;
   }
-  
+
   #flash {
     background-color: coral;
+  }
+
+  .ramble {
+    padding: 10px;
+    background-color: #f5f6fa;
+    max-width: 400px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-radius: 10px;
+  }
+
+  .ramble-text {
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 1px solid #CCCCCC;
   }
 
   #new-ramble {
