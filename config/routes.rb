@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: "rambles#index"
+  root to: "dashboards#show"
+
+  resource :dashboard, only: [:show]
 
   resources :rambles, only: [:index, :create, :show, :destroy] do
     member do

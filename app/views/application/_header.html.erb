@@ -1,0 +1,11 @@
+<div id=logo>
+  <h1><%= link_to 'rambler', root_path %></h1>
+</div>
+
+<div id='sign-in-status'>
+  <% if signed_in? -%>
+    <%= link_to t('layouts.application.sign_out'), sign_out_path, method: :delete %>
+    <% else -%>
+      <%= link_to t('layouts.application.sign_in'), sign_in_path %>
+    <% end -%>
+</div>

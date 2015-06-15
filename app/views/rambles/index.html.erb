@@ -1,15 +1,6 @@
-<h1>Welcome</h1>
+<h1>Index</h1>
+<%=link_to 'dashboard', dashboard_path %>
 
-<% if current_user %>
-  <p>I'm thinking...</p>
-  <%= form_for(@ramble)  do |f| %>
-    <%= f.text_field :body %>
-    <%= f.submit "Ramble!" %>
-  <% end %>
-<% else %>
-  <p>Sign in to ramble</p>
-<% end %>
-
-<ul>
+<ul id="all-rambles">
   <%= render @rambles %>
 </ul>

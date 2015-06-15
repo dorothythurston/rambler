@@ -1,0 +1,11 @@
+<div id="new-ramble">
+  <% if current_user %>
+    <p>I'm thinking...</p>
+    <%= form_for(@ramble)  do |f| %>
+      <%= f.text_field :body %>
+      <%= f.submit "Ramble!" %>
+    <% end %>
+  <% else %>
+    <p><%=link_to "sign in", sign_in_path%> to ramble</p>
+  <% end %>
+</div>

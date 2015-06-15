@@ -1,9 +1,12 @@
 <h2>Just sayin...</h2>
-<p><%= @ramble.body %></p>
+
+<div id="show-ramble">
+  <p><%= @ramble.body %></p>
+  <%= pluralize(@ramble.likes.count, "likes") %>
+</div>
 
 <% if current_user && current_user == @ramble.user %>
   <%= button_to "Delete", @ramble, method: :delete %>
-
 <% else %>
   <% if current_user.liked? @ramble%>
     <%= button_to "Unlike", unlike_ramble_path(@ramble), method: :delete %>
@@ -12,5 +15,6 @@
   <%end%>
 <% end %>
 
+<%= link_to 'home', root_path %>
 
-<%= pluralize(@ramble.likes.count, "likes") %>
+

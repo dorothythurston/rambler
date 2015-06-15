@@ -1,0 +1,49 @@
+#outer-wrapper {
+  @include outer-container;
+  text-align: center;
+
+  form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #logo {
+    @include linear-gradient(#1e5799, #2989d8);
+    @include linear-gradient(to top, #8fdce5, #3dc3d1);
+    @include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
+    @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  }
+
+  #logo a {
+    color: white;
+    font-size: 3em;
+  }
+  
+  #flash {
+    background-color: coral;
+  }
+
+  #new-ramble {
+    background-color: #EBF5FF;
+    padding: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+
+  #show-ramble {
+   background-color: #F5FAFF;
+   max-width: 400px;
+   padding: 10px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+  }
+
+  #main-content {
+    padding: 15px;
+  }
+}
