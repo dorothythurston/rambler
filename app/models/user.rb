@@ -42,4 +42,8 @@ class User < ActiveRecord::Base
   def unlike(target)
     likes.find_by(likable: target).destroy
   end
+
+  def self.paginated(page, per)
+    page(page).per(per)
+  end
 end

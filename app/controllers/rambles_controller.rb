@@ -1,7 +1,7 @@
 class RamblesController < ApplicationController
   def index
     @ramble = Ramble.new
-    @rambles = Ramble.all
+    @rambles = Ramble.paginated(params[:page], 5)
   end
 
   def create

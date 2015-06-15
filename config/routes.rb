@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     member do
       post "follow" => "following_relationships#create"
       delete "unfollow" => "following_relationships#destroy"

@@ -1,0 +1,6 @@
+<ul>
+  <li class="user">
+    <%= link_to user.email, user_path(user.id) %>
+    <p>rambler since: <%= user.created_at.strftime("%b %d %Y") %>
+  </li>
+<ul>

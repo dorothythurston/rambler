@@ -1,8 +1,10 @@
-<li class="ramble">
-  <%= ramble.created_at.strftime("%b %d %Y") %>
-- <%= link_to ramble.user.email, ramble.user %>
+<ul>
+  <li class="ramble">
+    <%= ramble.created_at.strftime("%b %d %Y") %>
+  — <%= link_to ramble.user.email, ramble.user %>
 
-  <div class="ramble-text">
-    <%= link_to ramble.body, ramble %>
-  </div>
-</li>
+    <div class="ramble-text">
+      <%= link_to ramble.body, ramble %>
+    </div>
+  </li>
+<ul>

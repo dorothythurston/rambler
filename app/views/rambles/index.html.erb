@@ -1,6 +1,7 @@
-<h1>Index</h1>
-<%=link_to 'dashboard', dashboard_path %>
+<h1>What's up...</h1>
+<%=link_to 'back to dashboard', dashboard_path %>
 
-<ul id="all-rambles">
+<div id="all-rambles">
   <%= render @rambles %>
-</ul>
+  <%= paginate @rambles %>
+</div>

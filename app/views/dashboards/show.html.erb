@@ -2,4 +2,12 @@
 
 <%= render 'rambles/new', ramble: @ramble %>
 
+<h2 id='rambles-header'>What's up...</h2>
+
 <%= render @rambles %>
+
+<%= paginate @rambles %>
+
+<%= link_to 'view all rambles', rambles_path %>
+<br>
+<%= link_to 'view all users', users_path %>
